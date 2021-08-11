@@ -7,7 +7,7 @@ import base64
 import time
 import re
 import ssl
-from .helpers import create_socket_wrapper, parse_proxy_url
+from .helpers import create_socket_wrapper, parse_proxy_url, parse_response
 from urllib.parse import unquote
 from.errors import ProxyError
 
@@ -26,13 +26,6 @@ def update_proxy_patch(
 
 
 ClientRequest.update_proxy = update_proxy_patch
-
-
-def parse_response(response_text):
-    response_text = response_text.decode()
-    status = re.search(r'HTTP/\d\.\d (\d+)', response_text)[1]
-    message = re.search(r'HTTP/\d\.\d \d+ ([\w ]+)\r', response_text)[1]
-    return int(status), message
 
 
 class ProxyConnector(TCPConnector):

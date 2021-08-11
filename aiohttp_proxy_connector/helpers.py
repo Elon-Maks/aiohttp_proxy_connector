@@ -144,3 +144,10 @@ async def create_connection(
     return await loop.create_connection(
         protocol_factory=protocol_factory, sock=sock.socket, **kwargs
     )
+
+
+def parse_response(response_text):
+    response_text = response_text.decode()
+    status = re.search(r'HTTP/\d\.\d (\d+)', response_text)[1]
+    message = re.search(r'HTTP/\d\.\d \d+ ([\w ]+)\r', response_text)[1]
+    return int(status), message
