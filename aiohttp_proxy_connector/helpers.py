@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import asyncio
 import socket
+import re
 from urllib.parse import unquote
 
 from yarl import URL

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='aiohttp_proxy_connector',
-    version='0.1',
+    version='0.2',
     description='allow http/https requests through https and socks proxy for aiohttp library',
     long_description=open('README.md').read(),
     classifiers=[
