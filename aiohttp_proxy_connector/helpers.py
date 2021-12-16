@@ -6,8 +6,8 @@ from urllib.parse import unquote
 
 from yarl import URL
 
-from aiohttp_proxy.errors import ProxyError
-from aiohttp_proxy.proto import Socks4SocketWrapper, Socks5SocketWrapper, ProxyType
+from aiohttp_proxy_connector.errors import ProxyError
+from aiohttp_proxy_connector.proto import Socks4SocketWrapper, Socks5SocketWrapper, ProxyType
 
 
 def create_socket_wrapper(
